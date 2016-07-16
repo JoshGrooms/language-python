@@ -1,0 +1,5 @@
+'.source.python':
+    'editor':
+        'commentStart': '# '
+        'increaseIndentPattern': '\\b(class|def|elif|else|except|finally|for|if|try|with|while)\\b.*:\\s*$'
+        'decreaseIndentPattern': '^\\s*(elif|else|except|finally)\\b.*:'

@@ -1,0 +1,191 @@
+'fileTypes': [
+  'py'
+]
+'name': 'Python'
+'scopeName': 'source.python'
+'patterns': [
+  {
+    'match': '(\\#\\#)(.*)(\\#\\#)\\r?\\n'
+    'captures':
+      '1':
+        'name': 'comment.section.open.python'
+      '2':
+        'name': 'comment.section.title.python'
+      '3':
+        'name': 'comment.section.close.python'
+    'name': 'comment.section.python'
+  }
+  {
+    'begin': '^\\s*(?<![^\\\\]\\\\)(\\\'\\\'\\\')'
+    'beginCaptures':
+      '1':
+        'name': 'comment.documentation.open.python'
+    'contentName': 'comment.documentation.content.python'
+    'end': '(?<![^\\\\]\\\\)(\\\'\\\'\\\')'
+    'endCaptures':
+      '1':
+        'name': 'comment.documentation.close.python'
+    'patterns': [
+      {
+        'match': '^\\s*\\#\\s*SYNTAX'
+        'name': 'comment.documentation.syntax.python'
+      }
+      {
+        'match': '^\\s*\\#\\s*OUTPUT[S]?'
+        'name': 'comment.documentation.output.python'
+      }
+      {
+        'match': '^\\s*\\#\\s*INPUT[S]?'
+        'name': 'comment.documentation.input.python'
+      }
+      {
+        'match': '^\\s*\\#\\s*PROPERTY|PROPERTIES'
+        'name': 'comment.documentation.properties.python'
+      }
+      {
+        'match': '^\\s*\\#.*'
+        'name': 'comment.documentation.content.python'
+      }
+    ]
+  }
+  {
+    'begin': '^\\s*(?<![^\\\\]\\\\)(\\"\\"\\")'
+    'beginCaptures':
+      '1':
+        'name': 'comment.documentation.open.python'
+    'contentName': 'comment.documentation.content.python'
+    'end': '(?<![^\\\\]\\\\)(\\"\\"\\")'
+    'endCaptures':
+      '1':
+        'name': 'comment.documentation.close.python'
+    'patterns': [
+      {
+        'match': '^\\s*\\#\\s*SYNTAX'
+        'name': 'comment.documentation.syntax.python'
+      }
+      {
+        'match': '^\\s*\\#\\s*OUTPUT[S]?'
+        'name': 'comment.documentation.output.python'
+      }
+      {
+        'match': '^\\s*\\#\\s*INPUT[S]?'
+        'name': 'comment.documentation.input.python'
+      }
+      {
+        'match': '^\\s*\\#\\s*PROPERTY|PROPERTIES'
+        'name': 'comment.documentation.properties.python'
+      }
+      {
+        'match': '^\\s*\\#.*'
+        'name': 'comment.documentation.content.python'
+      }
+    ]
+  }
+  {
+    'match': '(?<!\\\\)(\\#)(.*)'
+    'captures':
+      '1':
+        'name': 'comment.line.open.python'
+      '2':
+        'name': 'comment.line.content.python'
+    'name': 'comment.line.python'
+  }
+  {
+    'match': '\\s*\\b(assert|break|continue|else|elif|except|finally|for|from|if|pass|raise|return|try|while|with|yield)\\b'
+    'name': 'keyword.control.python'
+  }
+  {
+    'match': '\\s*\\b(and|as|def|del|exec|import|in|is|not|or|print)\\b'
+    'name': 'operator.word.python'
+  }
+  {
+    'match': '\\b(global|nonlocal)\\b'
+    'name': 'keyword.qualifier.python'
+  }
+  {
+    'match': '\\b(class|def|lambda|self)\\b'
+    'name': 'keyword.type.python'
+  }
+  {
+    'begin': '(def)\\s+(\\w+)\\s*(\\()'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.type.function.python'
+      '2':
+        'name': 'function.name.python'
+      '3':
+        'name': 'enclosure.group.open.python'
+    'end': '(\\))\\s*(\\:)'
+    'endCaptures':
+      '1':
+        'name': 'enclosure.group.close.python'
+      '2':
+        'name': 'operator.character.python'
+  }
+  {
+    'match': '\\b(False|True)\\b'
+    'name': 'literal.boolean.python'
+  }
+  {
+    'match': '\\b(\\d+(?:\\.\\d+)?(?:[eE][\\+\\-]?\\d+)?)\\b'
+    'name': 'literal.number.python'
+  }
+  {
+    'match': '\\b(None)\\b'
+    'name': 'literal.null.python'
+  }
+  {
+    'begin': '(?<![^\\\\]\\\\)(r?)(\\\')'
+    'beginCaptures':
+      '1':
+        'name': 'literal.string.qualifier.python'
+      '2':
+        'name': 'enclosure.string.open.python'
+    'contentName': 'literal.string.content.python'
+    'end': '(?<![^\\\\]\\\\)(\\\')'
+    'endCaptures':
+      '1':
+        'name': 'enclosure.string.close.python'
+  }
+  {
+    'begin': '(?<![^\\\\]\\\\)(r?)(\\")'
+    'beginCaptures':
+      '1':
+        'name': 'literal.string.qualifier.python'
+      '2':
+        'name': 'enclosure.string.open.python'
+    'contentName': 'literal.string.content.python'
+    'end': '(?<![^\\\\]\\\\)(\\")'
+    'endCaptures':
+      '1':
+        'name': 'enclosure.string.close.python'
+  }
+  {
+    'match': '(\\,|\\;|\\?|\\~|\\@|\\@\\=|\\:|\\:\\:|\\^|\\^\\=|\\%|\\%\\=|\\=|\\=\\=|\\!|\\!\\=|\\&|\\&\\=|\\||\\|\\=|\\+|\\+\\=|\\-|\\-\\=|/|/\\=|//|//\\=|\\*|\\*\\=|\\*\\*|\\*\\*\\=|\\>|\\>\\=|\\>\\>|\\>\\>\\=|\\<|\\<\\=|\\<\\<|\\<\\<\\=)'
+    'name': 'operator.character.python'
+  }
+  {
+    'match': '\\['
+    'name': 'enclosure.index.open.python'
+  }
+  {
+    'match': '\\]'
+    'name': 'enclosure.index.close.python'
+  }
+  {
+    'match': '\\('
+    'name': 'enclosure.group.open.python'
+  }
+  {
+    'match': '\\)'
+    'name': 'enclosure.group.close.python'
+  }
+  {
+    'match': '\\{'
+    'name': 'enclosure.block.open.python'
+  }
+  {
+    'match': '\\}'
+    'name': 'enclosure.block.close.python'
+  }
+]
