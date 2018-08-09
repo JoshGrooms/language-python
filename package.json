@@ -1,5 +1,5 @@
 {
-    "name": "language-python",
+    "name": "language-py",
     "version": "0.0.0",
     "private": true,
     "description": "Enhanced Python language support for Atom",
